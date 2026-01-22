@@ -1,0 +1,48 @@
+version: '3'
+
+vars:
+  BINARY_NAME: doc-search
+  BIN_DIR: bin
+
+tasks:
+  build:
+    desc: Build the doc-search binary with CGO enabled
+    cmds:
+      - mkdir -p {{.BIN_DIR}}
+      - CGO_ENABLED=1 go build -o {{.BIN_DIR}}/{{.BINARY_NAME}} ./cmd/doc-search
+    sources:
+      - cmd/**/*.go
+      - internal/**/*.go
+      - pkg/**/*.go
+      - go.mod
+      - go.sum
+    generates:
+      - "{{.BIN_DIR}}/{{.BINARY_NAME}}"
+    env:
+      CGO_ENABLED: 1
+
+  clean:
+    desc: Remove built binaries and test artifacts
+    cmds:
+      - rm -rf {{.BIN_DIR}}
+      - rm -rf db_data
+      - go clean -cache
+
+  test:
+    desc: Run all unit tests
+    cmds:
+      - go test ./... -v
+
+  test-short:
+    desc: Run tests without verbose output
+    cmds:
+      - go test ./...
+
+  inspector:
+    desc: Test the server with MCP Inspector
+    deps:
+      - build
+    cmds:
+      - npx @modelcontextprotocol/inspector ./{{.BIN_DIR}}/{{.BINARY_NAME}}
+    interactive: true
+
