@@ -43,8 +43,8 @@ export OPENAI_API_KEY="sk-..."
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/test-doc-mcp.git
-cd test-doc-mcp
+git clone https://github.com/cmrigney/mcp-document-search.git
+cd mcp-document-search
 
 # Build
 mkdir -p bin
@@ -94,7 +94,7 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 {
   "mcpServers": {
     "doc-search": {
-      "command": "/path/to/test-doc-mcp/bin/doc-search",
+      "command": "/path/to/mcp-document-search/bin/doc-search",
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }
@@ -224,7 +224,7 @@ go test -v ./internal/chunker
 ### Project Structure
 
 ```
-test-doc-mcp/
+mcp-document-search/
 ├── cmd/doc-search/          # Main entry point
 ├── internal/
 │   ├── chunker/            # Text chunking logic

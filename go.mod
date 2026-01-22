@@ -1,4 +1,4 @@
-module github.com/yourusername/test-doc-mcp
+module github.com/cmrigney/mcp-document-search
 
 go 1.25.3
 

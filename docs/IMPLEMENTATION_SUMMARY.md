@@ -84,7 +84,7 @@ A fully functional MCP server for semantic document search using OpenAI embeddin
 ## File Structure
 
 ```
-test-doc-mcp/
+mcp-document-search/
 ├── cmd/doc-search/
 │   └── main.go                      # Entry point (67 lines)
 ├── internal/

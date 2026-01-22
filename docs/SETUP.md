@@ -31,14 +31,14 @@ sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/b
 
 Then build:
 ```bash
-cd test-doc-mcp
+cd mcp-document-search
 task build
 ```
 
 #### Option B: Manual Build
 
 ```bash
-cd test-doc-mcp
+cd mcp-document-search
 mkdir -p bin
 CGO_ENABLED=1 go build -o bin/doc-search ./cmd/doc-search
 ```
@@ -89,7 +89,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 {
   "mcpServers": {
     "doc-search": {
-      "command": "/absolute/path/to/test-doc-mcp/bin/doc-search",
+      "command": "/absolute/path/to/mcp-document-search/bin/doc-search",
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }

@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/cmrigney/mcp-document-search/internal/search"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	"github.com/yourusername/test-doc-mcp/internal/search"
 )
 
 // handleSearch handles the search tool

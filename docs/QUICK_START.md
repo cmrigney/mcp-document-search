@@ -9,7 +9,7 @@
 
 ```bash
 # Clone the repository
-cd test-doc-mcp
+cd mcp-document-search
 
 # Set your OpenAI API key
 export OPENAI_API_KEY="sk-..."
@@ -83,7 +83,7 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 {
   "mcpServers": {
     "doc-search": {
-      "command": "/absolute/path/to/test-doc-mcp/bin/doc-search",
+      "command": "/absolute/path/to/mcp-document-search/bin/doc-search",
       "env": {
         "OPENAI_API_KEY": "sk-..."
       }

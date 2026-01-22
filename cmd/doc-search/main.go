@@ -9,13 +9,13 @@ import (
 	"syscall"
 
 	sqlite_vec "github.com/asg017/sqlite-vec-go-bindings/cgo"
-	"github.com/yourusername/test-doc-mcp/internal/chunker"
-	"github.com/yourusername/test-doc-mcp/internal/config"
-	"github.com/yourusername/test-doc-mcp/internal/embeddings"
-	"github.com/yourusername/test-doc-mcp/internal/fetcher"
-	"github.com/yourusername/test-doc-mcp/internal/search"
-	"github.com/yourusername/test-doc-mcp/internal/storage"
-	"github.com/yourusername/test-doc-mcp/pkg/server"
+	"github.com/cmrigney/mcp-document-search/internal/chunker"
+	"github.com/cmrigney/mcp-document-search/internal/config"
+	"github.com/cmrigney/mcp-document-search/internal/embeddings"
+	"github.com/cmrigney/mcp-document-search/internal/fetcher"
+	"github.com/cmrigney/mcp-document-search/internal/search"
+	"github.com/cmrigney/mcp-document-search/internal/storage"
+	"github.com/cmrigney/mcp-document-search/pkg/server"
 )
 
 func main() {

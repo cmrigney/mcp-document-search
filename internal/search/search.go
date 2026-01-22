@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/yourusername/test-doc-mcp/internal/chunker"
-	"github.com/yourusername/test-doc-mcp/internal/embeddings"
-	"github.com/yourusername/test-doc-mcp/internal/fetcher"
-	"github.com/yourusername/test-doc-mcp/internal/storage"
+	"github.com/cmrigney/mcp-document-search/internal/chunker"
+	"github.com/cmrigney/mcp-document-search/internal/embeddings"
+	"github.com/cmrigney/mcp-document-search/internal/fetcher"
+	"github.com/cmrigney/mcp-document-search/internal/storage"
 )
 
 // Service orchestrates search operations

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/cmrigney/mcp-document-search/internal/search"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
-	"github.com/yourusername/test-doc-mcp/internal/search"
 )
 
 // Server represents the MCP server
