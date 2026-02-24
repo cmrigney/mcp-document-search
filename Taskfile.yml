@@ -46,3 +46,19 @@ tasks:
       - npx @modelcontextprotocol/inspector ./{{.BIN_DIR}}/{{.BINARY_NAME}}
     interactive: true
 
+  docker-build:
+    desc: Build Docker image for MCP server
+    vars:
+      IMAGE_NAME: '{{.IMAGE_NAME | default "mcp-doc-search"}}'
+      TAG: '{{.TAG | default "latest"}}'
+    cmds:
+      - docker build -t {{.IMAGE_NAME}}:{{.TAG}} .
+    sources:
+      - Dockerfile
+      - cmd/**/*.go
+      - internal/**/*.go
+      - pkg/**/*.go
+      - go.mod
+      - go.sum
+
+

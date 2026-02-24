@@ -1,0 +1,56 @@
+name: document-search
+type: server
+title: Document Search
+description: Semantic search through documents using chunked embeddings and vector similarity search.
+
+image: crigneydocker/mcp-document-search:latest
+
+# OpenAI API key required for embeddings
+secrets:
+  - name: document-search.openai_api_key
+    env: OPENAI_API_KEY
+    example: sk-proj-...
+
+# User-configurable settings
+config:
+  - name: document-search
+    description: Document search configuration
+    type: object
+    properties:
+      chunk_size:
+        type: number
+        description: Size of text chunks in characters
+        default: 1000
+      overlap:
+        type: number
+        description: Overlap between chunks in characters
+        default: 100
+    required: []
+
+# Environment variables
+env:
+  - name: DB_PATH
+    value: /data/doc_search.db
+  - name: CHUNK_SIZE
+    value: "{{document-search.chunk_size}}"
+  - name: OVERLAP
+    value: "{{document-search.overlap}}"
+
+# Persistent volume for database
+volumes:
+  - document-search-data:/data
+
+# Network access for OpenAI API
+allowHosts:
+  - api.openai.com:443
+
+# Tools provided by this server
+tools:
+  - name: search
+    description: Semantic search through indexed documents
+  - name: index
+    description: Index a file, URL, or content for semantic search
+  - name: list
+    description: List all indexed documents with metadata
+  - name: delete
+    description: Remove an indexed document from the database
